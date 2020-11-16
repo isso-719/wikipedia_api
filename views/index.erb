@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <body>
-	<%= @result %>
+	<% @results.each do |i| %>
+		<p>
+			<b><%= i[1]["title"] %></b>
+			<br>
+			<%= i[1]["extract"] %>
+		</p>
+	<% end %>
 </body>
 </html>

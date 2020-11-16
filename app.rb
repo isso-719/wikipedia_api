@@ -16,7 +16,7 @@ def url_gen(keyword)
 end
 
 get '/' do
-    "URLの後にキーワードを入力してください\nFor example: https://wikipedia-api-net.herokuapp.com/Ruby"
+    "URLの後にキーワードを入力してください。For example: https://wikipedia-api-net.herokuapp.com/Ruby"
 end
 
 get '/:keyword' do

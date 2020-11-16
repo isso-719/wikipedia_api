@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="ja">
 <body>
-	<% @results.each do |i| %>
-		<p>
-			<b><%= i[1]["title"] %></b>
-			<br>
-			<%= i[1]["extract"] %>
-		</p>
+	<% if @results.empty? %>
+		<p>検索結果はありません。</p>
+	<% else %>
+		<% @results.each do |i| %>
+			<p>
+				<b><%= i[1]["title"] %></b>
+				<br>
+				<%= i[1]["extract"] %>
+			</p>
+		<% end %>
 	<% end %>
 </body>
 </html>

@@ -15,7 +15,7 @@ end
 
 not_found do
     "We need keyword after '/?keyword=' . For example: https://wikipedia-api-net.herokuapp.com/?keyword=Ruby"
-  end
+end
 
 get '/' do
     if params['keyword'] && !params['keyword'].empty?

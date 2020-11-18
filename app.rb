@@ -7,17 +7,15 @@ require 'open-uri'
 require 'json'
 
 def url_gen(keyword)
-    # base_url = 'http://ja.wikipedia.org/w/api.php?format=json&action=query&prop=extracts&exintro&explaintext&redirects=1&titles='
-    # base_url = 'http://ja.wikipedia.org/w/api.php?format=json&action=query&list=search&srlimit=3&srsearch='
     base_url = 'https://ja.wikipedia.org/w/api.php?format=json&action=opensearch&limit=3&search='
     url = URI.encode(base_url+keyword)
     url = URI.parse(url)
     return url
 end
 
-# get '/' do
-#     "We need keyword after / .For example: https://wikipedia-api-net.herokuapp.com/Ruby"
-# end
+not_found do
+    "We need keyword after '/?keyword=' . For example: https://wikipedia-api-net.herokuapp.com/?keyword=Ruby"
+  end
 
 get '/' do
     if params['keyword'] && !params['keyword'].empty?
@@ -40,7 +38,7 @@ get '/' do
         erb :index
 
     else
-        "We need keyword after '/' . For example: https://wikipedia-api-net.herokuapp.com/?keyword=Ruby"
+        "We need keyword after '/?keyword=' . For example: https://wikipedia-api-net.herokuapp.com/?keyword=Ruby"
 
     end
 end

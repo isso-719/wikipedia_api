@@ -20,7 +20,7 @@ end
 # end
 
 get '/' do
-    if params['keyword']
+    if params['keyword'] && !params['keyword'].empty?
         keyword = params['keyword']
         uri = URI(url_gen(keyword))
         json_file = open(uri).read
@@ -40,7 +40,7 @@ get '/' do
         erb :index
 
     else
-        "We need keyword after / .For example: https://wikipedia-api-net.herokuapp.com/Ruby"
+        "We need keyword after '/' . For example: https://wikipedia-api-net.herokuapp.com/?keyword=Ruby"
 
     end
 end

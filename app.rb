@@ -23,9 +23,9 @@ def url_gen_content(keyword)
 end
 
 # GET 404
-# not_found do
-#     "We need keyword after '/?keyword=' . For example: https://wikipedia-api-net.herokuapp.com/?keyword=Ruby"
-# end
+not_found do
+    "We need keyword after '/?keyword=' . For example: https://wikipedia-api-net.herokuapp.com/?keyword=Ruby"
+end
 
 get '/' do
 
@@ -53,8 +53,8 @@ get '/' do
         erb :index
 
     # もしクエリの内容が不十分だった場合
-    # else
-    #     "We need keyword after '/?keyword=' . For example: https://wikipedia-api-net.herokuapp.com/?keyword=Ruby"
+    else
+        "We need keyword after '/?keyword=' . For example: https://wikipedia-api-net.herokuapp.com/?keyword=Ruby"
 
     end
 end

@@ -50,7 +50,9 @@ get '/' do
 
         end
 
-        erb :index
+        unless @results.empty?
+            erb :index
+        end
 
     # もしクエリの内容が不十分だった場合
     else

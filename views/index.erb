@@ -3,12 +3,12 @@
 <body>
 
 	<%# 検索結果がない場合 "No results."を表示する %>
-	<% if @results.empty? %>
+	<%# <% if @results.empty? %>
 		<%# advanced考えると消したほうが良いかもしれない %>
 		<%# <p>No results.</p> %>
 
 	<%# 検索結果がある場合 タイトルと概要を表示する %>
-	<% else %>
+	<%# <% unless @results.empty? %>
 		<% @results.each do |result| %>
 			<p>
 				<b><%= result[1]["title"] %></b>
@@ -17,7 +17,7 @@
 			</p>
 		<% end %>
 
-	<% end %>
+	<%# <% end %>
 
 </body>
 </html>
